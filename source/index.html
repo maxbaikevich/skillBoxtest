@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <heeder class="page-header">
+        <h1 class="page-header__title"> Стоимость обучения</h1>
+    </heeder>
+    <main class="page_main">
+        <div class="wrapper">
+            <section class="price">
+                <div class="promo">
+                    <p class="promo-text">Скидка</p>
+                    <span class="promo-mod promo-proc">40%</span>
+                    <span class="promo-mod promo-first">первым 20</span>
+                </div>
+                <div class="price__box">
+                    <div class="price__options">
+                        <p class="price__text">Полная стоимость курса</p>
+                        <span class="price__cash price__cash--mod">50 000 &#8381;</span>
+                    </div>
+                    <div class="price__options price__options--mod">
+                        <p class="price__text price__cash--attention price__cash--number">2 900 &#8381;</p>
+                        <span class="price__text--attention">Рассрочка без первого взноса</span>
+                    </div>
+                    <div class="price__options">
+                        <p class="price__cash price__cash--first">29 000 &#8381;</p>
+                        <span class="price__text price__text--first"> <span class="price__text--desc-mod">Для</span>
+                            <span class="price__text--desc-mod-1">первых 20-ти</span><span
+                                class="price__text--desc-mod-2">Первым 20-ти</span></span>
+                    </div>
+                </div>
+            </section>
+            <div>
+                <section class="registration">
+                    <h2 class="registration__title">Запишитесь на курс</h2>
+                    <ul class="advantages">
+                        <li class="advantages__item">Телефон</li>
+                        <li class="advantages__item">Телефон</li>
+                        <li class="advantages__item">Телефон</li>
+                        <li class="advantages__item">Телефон</li>
+                    </ul>
+                    <div class="registration__wrapper">
+                        <div class="registration__info">
+                            <p class="registration__style registration__start">Старт курса <span
+                                    class="registration__date">15 июля</span><span class="registration__date--mod">7
+                                    сентября</span></p>
+                            <p class="registration__style registration__left">Осталось <span
+                                    class="registration__date ">12 мест</span><span class="registration__date--mod">19
+                                    мест</span></p>
+                        </div>
+                    </div>
+                </section>
+                <form class="form" method="get" action=""">
+            <ul class=" form__list">
+                    <li class="form__item">
+                        <input class="form__input" type="text" name="name" placeholder="Имя">
+                    </li>
+                    <li class="form__item">
+                        <input class="form__input" type="tel" name="tel" placeholder="Телефон">
+                    </li>
+                    <li class="form__item form__item--mod2">
+                        <input class="form__input" type="email" name="email" placeholder="Email">
+                    </li>
+                    </ul>
+                    <div class="form__item--wrapper">
+                        <div class="form__item form__item--mod">
+                            <input class="form__check form__check--mod visually-hidden" id="conditions" type="checkbox"
+                                name="check" checked>
+                            <label class="form__conditions" for="conditions">Я согласен с условиями обработки <span
+                                    class="form-span">персональных данных</span></label>
+
+                        </div>
+                        <button type="submit" class="form-btn">Записаться</button>
+                        <div class="valid">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        let form = document.querySelector("form");
+        let name = form.querySelector("[name=name]");
+        let tel = form.querySelector("[name=tel")
+        let email = form.querySelector("[name=email]");
+        let valid = form.querySelectorAll(".form__input");
+
+        form.addEventListener("submit", function (evt) {
+            if (!name.value || !tel.value || !email.value) {
+                evt.preventDefault();
+                for (let i = 0; i < valid.length; i++) {
+                    valid[i].style.borderColor = "red";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
